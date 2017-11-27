@@ -129,7 +129,7 @@ The correlation of predicted values (x-axis) on real values (y-axis) is extremel
 ### Natural Language Processing  
 Branches of science was a basic text mining exploration that would roughly fall under natural language processing. The extraction of popular words (mentioned in the grouping section) was also a natural language processing analysis. From the popular words analysis, the following list of words were extracted as the top words used in the most retweeted tweets:  
 
-|  |  |  |  |  | 
+Words |  |  |  |  |  | 
 --- | --- | --- | --- | --- | --- 
 https | 	twisteddoodles | 	awesome | 	scientific | 	new | 	reading
 http | 	times | 	tufts | 	follow | 	order | 	really
