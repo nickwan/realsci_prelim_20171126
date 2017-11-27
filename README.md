@@ -5,7 +5,7 @@ The preliminary analyses are to get a better understanding of the data. Some imp
 
 The major recommendations:
 * Better cleaning of the current data and metadata (introduction questionnaire, pre-follower data, post-follower data) in order to accurately assess the naturalistic phenomena associated with the account. This would most likely be best provided by some sort of data-specific internship.  
-* A larger understanding of the text data. Basic naturalistic language processing has been insightful, but more is absolutely necessarily based on some of the preliminary analyses which are limited and would be better assessed via NLP or different text-based analytics.  
+* A larger understanding of the text data. Basic naturalistic language processing has been insightful, but more is absolutely necessary based on some of the preliminary analyses which are limited and would be better assessed via NLP or different text-based analytics.  
 * Supplementing the end of the week with more moderator-led chat or engagement activities. There is a consistent observation of Friday and Saturday being relative low-points of engagement. In terms of growing the account (or efficiently using all of the days in a week), maintaining or increasing engagement towards the end of the week should be a strong priority in the future.  
 
 ## Initial Descriptions  
