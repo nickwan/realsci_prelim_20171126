@@ -70,6 +70,7 @@ However, when converted to engagement rate, this finding is nearly in a null-to-
 !['Popular words (engagement rate)'](../master/viz/prelim01_11.png)  
 
 Intuitively, you would assume using the top 50 words that created the most retweets would have greater engagements than any other words (and that is partially true in the engagement counting statistic). However, since engagement rate is more accurate when comparing efficiency of engagement, there tends to be less engagement efficiency when using popular words. This seems less intuitive, but the logic still follows: the "lurker" who tends to read something but selects not to interact with a tweet is greater than an active engager (and that was true from the original analysis, showing ~1.8% engagement rate). However, as the counts increase for engagements, it's possible that the views increase in a non-linear, perhaps exponential manner. Or, more statistically speaking, the relationship is not:    
+
 ![eq1](http://latex.codecogs.com/gif.latex?%5Ctext%7BEngagement%20rate%7D%20%3D%20%5Cfrac%7B%5Ctext%7BEngagements%7D%7D%7B%5Ctext%7BImpressions%7D%7D)
 
 But perhaps the actual rate of engagement is more like:  
