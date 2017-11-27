@@ -77,7 +77,7 @@ But perhaps the actual rate of engagement is more like:
 
 ![eq2](http://latex.codecogs.com/gif.latex?%5Ctext%7BEngagement%20rate%7D%20%3D%20%5Cfrac%7B%5Ctext%7BEngagements%7D%7D%7B%5Ctext%7BImpressions%7D%5EX%7D) 
 
-Where $X$ is some sort of growth factor. Needless to say, the complexity between engagements and impressions is perhaps greater than the simple analytics presented here.  
+Where _X_ is some sort of growth factor. Needless to say, the complexity between engagements and impressions is perhaps greater than the simple analytics presented here.  
 
 In one more grouping analysis, the difference between different branches of science seem to be less clear. Below is both engagements and engagement rate:  
 !['Branches of science (engagements)'](../master/viz/prelim01_13.png)  
