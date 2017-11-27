@@ -13,9 +13,9 @@ The major recommendations:
 Before jumping into the analyses, I would like to briefly explain the data. The data from analytics.twitter.com tracks data from tweets. However, some columns of data are not intuitive. For example, take _follows_. Anecdotally, there is always far more follows per day than recorded by the data. Why? Because the data tracks information from within a tweet. Follows within one tweet will be far less than follows after someone first clicks on the user profile name and then reads multiple tweets. This leads to a follow from the profile page (not any specific tweet) and therefore does not get included in the dataset.  
 
 Here is what follows look like across a week:  
-!['Follows'](../preliminary/viz/prelim01_01.png)  
+!['Follows'](../viz/prelim01_01.png)  
 Here is what user profile clicks look like:  
-!['User profile clicks'](../preliminary/viz/prelim01_02.png)  
+!['User profile clicks'](../viz/prelim01_02.png)  
 
 I know that, on average, there are far more than 20 follows per week and far less than 2000 follows per week (anecdotally). If we pretend that 5% of user profile clicks end up being follows, then ~100 follows per week sounds a little more accurate.  
 
@@ -27,22 +27,22 @@ Two aggregate statistics are provided by Twitter: impressions and engagements. T
 > **Engagements**: Total number of times a user has interacted with a Tweet. This includes all clicks anywhere on the Tweet (including hashtags, links, avatar, username, and Tweet expansion), retweets, replies, follows, and likes.  
 
 These statistics can be (somewhat) easily recreated using the raw data provided by analytics.twitter.com. We can visualize impressions and engagements over the week on @realscientists:  
-!['Impressions'](../preliminary/viz/prelim01_03.png)  
-!['Engagements'](../preliminary/viz/prelim01_04.png)  
+!['Impressions'](../viz/prelim01_03.png)  
+!['Engagements'](../viz/prelim01_04.png)  
 
 A few things are very noticeable here. Impressions are greater than engagements by a couple orders of magnitude. Impressions themselves follow a somewhat predictable trajectory, with greater impressions earlier in the week and slowly decaying as the week continues. The engagements are less predictable, with Thursday and Saturday being largely more variable than other days. One issue with impressions and engagements is that engagements are apart of impressions. Or, in other words, in order to create an engagement, someone must also create an impression. If you simply subtract engagements from impressions, the difference is views without engagements.  
-!['Views'](../preliminary/viz/prelim01_05.png)  
+!['Views'](../viz/prelim01_05.png)  
 
 Views are similar to impressions (the magnitude of values are the same) so it is difficult to see the differences here. But there is an issue with presenting data in this way. Raw "counting" data (i.e. things you can add together, like retweets) might be poor representation when one curator is perhaps less popular than another -- or perhaps one curator tweets less than another. In either of these cases, counting data would punish those with fewer counts. However, there is precedent for infrequent tweets and many engagements (see: celebrity tweets) and also frequent tweets with very few engagements (see: new Twitter users). A perhaps more "fair" way to assess these differences would be to use rate statistics.  
-!['View rate'](../preliminary/viz/prelim01_06.png)  
-!['Engagement rate'](../preliminary/viz/prelim01_07.png)  
+!['View rate'](../viz/prelim01_06.png)  
+!['Engagement rate'](../viz/prelim01_07.png)  
 
 View rate (or "view_rate") is views divided by impressions. In contrast, engagement rate (or "engagement_rate") is engagements divided by impressions. In the majority of cases, the object is to predict engagements since engagements are more equivalent to maintaining an active audience than views. To further see the relationship between engagements and views, we can simply demonstrate a ratio between the two:  
-!['Engagement ratio'](../preliminary/viz/prelim01_08.png)  
+!['Engagement ratio'](../viz/prelim01_08.png)  
 
 Engagement ratio and engagement rate are similar, but the denomenators are very different. Some statistics will be shown as rate and some as ratio. Currently, there's no standardization to which is a better source of data for either descriptive or predictive statistics. Here's a description of these statistics:  
 
- | impressions | 	engagements | 	views | 	view_rate | 	engagement_rate | 	engagement_ratio
+stat | impressions | 	engagements | 	views | 	view_rate | 	engagement_rate | 	engagement_ratio
 --- | --- | --- | --- | --- | --- | --- 
 count | 	6.940000e+02 | 	694.000000 | 	6.940000e+02 | 	694.000000 | 	694.000000 | 	694.000000
 mean | 	1.641592e+05 | 	3083.821326 | 	1.610754e+05 | 	0.981092 | 	0.018908 | 	0.019393
@@ -61,13 +61,13 @@ As the data analyses unfold below, keep in mind that engagement rate should be s
 One aspect of describing how people engage is if there are particular groups of curators who engage more effectively than others. Some of the groups presented here are logical and intuitive to understand whereas other groups may be less intuitive.  
 
 For example, engagement rate increases as a curator creates more media views.  
-!['Media views'](../preliminary/viz/prelim01_09.png)  
+!['Media views'](../viz/prelim01_09.png)  
 
 This is fairly intuitive -- more media (like images or video) creates more engagements than less media. Other graphs seem intuitive, like this graph on popular word usage:  
-!['Popular words (engagements)'](../preliminary/viz/prelim01_10.png)  
+!['Popular words (engagements)'](../viz/prelim01_10.png)  
 
 However, when converted to engagement rate, this finding is nearly in a null-to-opposite direction:  
-!['Popular words (engagement rate)'](../preliminary/viz/prelim01_11.png)  
+!['Popular words (engagement rate)'](../viz/prelim01_11.png)  
 
 Intuitively, you would assume using the top 50 words that created the most retweets would have greater engagements than any other words (and that is partially true in the engagement counting statistic). However, since engagement rate is more accurate when comparing efficiency of engagement, there tends to be less engagement efficiency when using popular words. This seems less intuitive, but the logic still follows: the "lurker" who tends to read something but selects not to interact with a tweet is greater than an active engager (and that was true from the original analysis, showing ~1.8% engagement rate). However, as the counts increase for engagements, it's possible that the views increase in a non-linear, perhaps exponential manner. Or, more statistically speaking, the relationship is not:  
 $$ \text{Engagement rate} = \frac{\text{Engagements}}{\text{Impressions}} $$  
@@ -76,8 +76,8 @@ $$ \text{Engagement rate} = \frac{\text{Engagements}}{\text{Impressions}^X} $$
 Where $X$ is some sort of growth factor. Needless to say, the complexity between engagements and impressions is perhaps greater than the simple analytics presented here.  
 
 In one more grouping analysis, the difference between different branches of science seem to be less clear. Below is both engagements and engagement rate:  
-!['Branches of science (engagements)'](../preliminary/viz/prelim01_13.png)  
-!['Branches of science (engagement rate)'](../preliminary/viz/prelim01_14.png)  
+!['Branches of science (engagements)'](../viz/prelim01_13.png)  
+!['Branches of science (engagement rate)'](../viz/prelim01_14.png)  
 
 This is a particular area where rate statistics are more clear than counting statistics. In this particular analysis, there is an unbalanced pool of people from these branches of science. 
 
@@ -97,8 +97,8 @@ For example, on Sunday, socio- fields look underrepresented in engagement counti
 Branches of science itself is a particularly interesting grouping metric since there is a possible hypothesis that certain sciences are more popular than others. However, in a demonstration of machine learning (presented in detail in the machine learning section), all branches of science did not have a positive coefficient for predicting engagement rate. This suggests that even though there are significantly different engagements per day during the week, the ability to predict a significantly different trend simply due to a branch of science is not possible currently.  
 
 There are other reasons to group data that are not solely for grouping due to describe trends in data. It is possible to leverage grouping using unsupervised methods (like K-means clustering) in order to identify outliers with objectivity. Take for example engagement rate as a function of views:  
-!['Engagement groups (quantiles)'](../preliminary/viz/prelim01_15.png)  
-!['Engagement groups (KMeans)'](../preliminary/viz/prelim01_16.png)  
+!['Engagement groups (quantiles)'](../viz/prelim01_15.png)  
+!['Engagement groups (KMeans)'](../viz/prelim01_16.png)  
 
 Groups in the first graph are divided into high engagement rate ('hi'), medium engagement rate ('md'), and low engagement rate ('lo'). These groups are divided by the top 95% of engagements ('hi'), engagements between 5% and 95% ('md'), and the bottom 5% of engagements ('lo'). The issue with this rigid grouping is how much data would be eliminated if high engagement was rejected as "outlier" and how little information is removed when low engagement is treated as "outlier". The second graph uses K-means clustering instead of quantiles. The KMeans clusters data in three ways: first, those with low views but high engagement; second, those with "proportional" views and engagements; and lastly, those with low engagements but high views. There still tends to be much data to remove in the low-view-high-engagement cluster, but this is less rigid and more objective than subjectively rejecting data simply because the data seems like an outlier. 
 
@@ -122,7 +122,7 @@ physics |        -0.000419 | 0.198
 Although some of these values are reported as significant, this is a bit misleading. Handle, hour, and day are all magnitudes less than the most meaningful unit (this is a rate statistic, so roughly 0.005 and greater would be meaningful). Bio- and chem- fields are also significant but significance is 5x greater than the reported beta coefficient. In all of these weights, there is no significant predictor for engagement rate. Day and hour is seemingly striking. You might assume tweets in specific hours of the day would be engaged with more often than others (i.e. in West Europe or Eastern US waking times), but this is simply not the case. Also with day, there is a demonstrated decay of engagement as the week goes on, but day was not a significant predictor of engagement rate. It is possible that engagement decay is also logarithmic or polynomial function and a linear model is inadequate. This is also true for each feature in this model. Other machine learning methods, like random forests after a polynomial fit, might be better to implement.  
 
 When trying to fit the above features to a predictive linear model:  
-!['Engagement rate prediction'](../preliminary/viz/prelim01_17.png)  
+!['Engagement rate prediction'](../viz/prelim01_17.png)  
 
 The correlation of predicted values (x-axis) on real values (y-axis) is extremely weak. This was already known from the weak beta coefficients, but visually it does beg the question of whether some sort of grouping factor (like the one presented with KMeans) may be actually advantageous for prediction over features like hour, day, or branch of science. 
 
