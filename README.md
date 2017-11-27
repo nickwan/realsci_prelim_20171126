@@ -63,7 +63,7 @@ One aspect of describing how people engage is if there are particular groups of 
 For example, engagement rate increases as a curator creates more media views.  
 !['Media views'](../master/viz/prelim01_09.png)  
 
-This is fairly intuitive -- more media (like images or video) creates more engagements than less media. Other graphs seem intuitive, like this graph on popular word usage:  
+This is fairly intuitive -- more media (like images or video) creates more engagements than less media. Other graphs seem intuitive, like this graph on popular word usage, where the use of the most popular words in the most retweeted tweets have a significantly larger engagement count than tweets with no popular words present:  
 !['Popular words (engagements)'](../master/viz/prelim01_10.png)  
 
 However, when converted to engagement rate, this finding is nearly in a null-to-opposite direction:  
